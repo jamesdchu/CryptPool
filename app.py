@@ -1,27 +1,25 @@
 # ---- YOUR APP STARTS HERE ----
 # -- Import section --
 from flask import Flask
-from flask import render_template
-from flask import request
-# from flask_pymongo import PyMongo
-
+from flask import render_template, request, redirect, url_for, session
+from flask_pymongo import PyMongo
+import model, bcrypt, random, time
+from stellar_sdk import Server, Asset, Account, Keypair, TransactionBuilder, Network
 
 # -- Initialization section --
 app = Flask(__name__)
 
-events = [
-        {"event":"First Day of Classes", "date":"2019-08-21"},
-        {"event":"Winter Break", "date":"2019-12-20"},
-        {"event":"Finals Begin", "date":"2019-12-01"}
-    ]
+app.secret_key = "ojI3jkol:#Me]_mk2mkm@mMWr3"
+user = os.environ['user']
+pw = os.environ['pw']
 
 # name of database
-# app.config['MONGO_DBNAME'] = 'database-name'
+app.config['MONGO_DBNAME'] = 'HTN21'
 
 # URI of database
-# app.config['MONGO_URI'] = 'mongo-uri'
+app.config['MONGO_URI'] = f'mongodb+srv://{user}:{pw}@cluster0.6gvi8.mongodb.net/HTN21?retryWrites=true&w=majority'
 
-# mongo = PyMongo(app)
+mongo = PyMongo(app)
 
 # -- Routes section --
 # INDEX
