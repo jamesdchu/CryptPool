@@ -26,19 +26,62 @@ mongo = PyMongo(app)
 
 @app.route('/')
 @app.route('/index')
-
 def index():
-    return render_template('index.html', events = events)
+    return render_template('index.html')
+
+@app.route('/signup', methods=["GET", "POST"])
+def signup(): 
+    return "To Do"
+
+@app.route('/login', methods=["GET", "POST"])
+def login(): 
+    return "To Do"
+
+@app.route('/explore')
+def explore(): 
+    return "To Do"
+
+@app.route('/CreateFundraiser', methods=["GET","POST"])
+def CreateFundraiser():
+    return "To Do"
+
+@app.route('/f/<fundraiser_id>')
+def f(fundraiser_id):
+    return "To Do"
+
+@app.route('/donate/<fundraiser_id>', methods = ["GET","POST"])
+def donate(fundraiser_id):
+    return "To Do"
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return "To Do"
+
+@app.route('/deleteAccount', methods=["GET","POST"])
+def deleteAccount(): 
+    return "To Do"
+
+@app.route('/editProfile', methods=["GET","POST"])
+def editProfile(): 
+    return "To Do"
+
+@app.route('/history')
+def history(): 
+    return "To Do"
 
 
-# CONNECT TO DB, ADD DATA
 
-@app.route('/add')
 
-def add():
-    # connect to the database
 
-    # insert new data
 
-    # return a message to the user
-    return ""
+
+# @app.route('/add')
+
+# def add():
+#     # connect to the database
+
+#     # insert new data
+
+#     # return a message to the user
+#     return ""
