@@ -233,6 +233,8 @@ def history():
     else:  
         return render_template('index.html')         
 
+# Working
+
 # @app.route('/add')
 # def add():
 #     # connect to the database
