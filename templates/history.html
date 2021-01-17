@@ -37,9 +37,9 @@
             <div class="row projects">
                 <!-- JINJA FOR LOOP STARTS HERE -->
                 {% for donations in donated %}
-                <div class="col-sm-6 item">
+                <diyyv class="col-sm-6 item">
                     <div class="row">
-                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="../static/History/img/desk.jpg"></a></div>
+                        <div class="col-md-12 col-lg-5"><a href="/f/{{ donations[4] }}"><img class="img-fluid" src="{{ donations[3] }}"></a></div>
                         <div class="col">
                             <h3 class="name">{{ donations[0] }}</h3>
                             <p class="description"><b>Donated:</b> <br> Asset Code: {{ donations[1] }} <br> Quantity: {{ donations[2] }} </p>
@@ -61,7 +61,7 @@
                 {% for fundraiser in my_fundraisers %}
                 <div class="col-sm-6 item">
                     <div class="row">
-                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="{{ fundraiser['img1'] }}"></a></div>
+                        <div class="col-md-12 col-lg-5"><a href="/f/{{ fundraiser[1] }}"><img class="img-fluid" src="{{ fundraiser[2] }}"></a></div>
                         <div class="col">
                             <h3 class="name">{{ fundraiser[0] }}</h3>
                             {% for asset in my_balances %}
@@ -97,7 +97,7 @@
                     </div>
                     <div class="col-md-6 item text">
                         <h3>CryptPool</h3>
-                        <p>Donate across Borders</p>
+                        <p>CryptPool is a fundraising platform that is currently supported globally and uses Stellar to make transactions in all supported assets, including cryptocurrencies and fiat currencies. Donations to fundraisers through CryptPool are instant, secure, and almost feeless (10^-5 XLM per transaction ~ around 0.0003 cents).</p>
                     </div>
                     <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
                 </div>

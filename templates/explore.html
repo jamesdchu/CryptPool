@@ -38,9 +38,9 @@
             <div class="row articles">
                 <!-- FOR LOOP THAT ITERATES THROUGH THE FEATURED FUNDRAISERS TO DISPLAY THEM ALL -->
                 {% for fundraiser in fundraisers %} 
-                <div class="col-sm-6 col-md-4 item"><a href="/f/{{fundraiser['id'] }}" ><img class="img-fluid" src="{{ fundraiser['front_img'] }}"></a>
+                <div class="col-sm-6 col-md-4 item"><a href="/f/{{fundraiser['id'] }}" ><img class="img-fluid" src="{{ fundraiser['img1'] }}"></a>
                     <h3 class="name">{{ fundraiser["title"] }}</h3>
-                    <p class="description">{{ fundraiser["category"] }}</p>
+                    <p class="description"><b>{{ fundraiser["category"] }}</b></p>
                     <p class="description">{{ fundraiser["description"] }}</p><a class="action" href="/f/{{fundraiser['id'] }}"><i class="fa fa-arrow-circle-right"></i></a>
                 </div>
                 {% endfor %}
@@ -83,7 +83,7 @@
                     </div>
                     <div class="col-md-6 item text">
                         <h3>CryptPool</h3>
-                        <p>Donate across Borders</p>
+                        <p>CryptPool is a fundraising platform that is currently supported globally and uses Stellar to make transactions in all supported assets, including cryptocurrencies and fiat currencies. Donations to fundraisers through CryptPool are instant, secure, and almost feeless (10^-5 XLM per transaction ~ around 0.0003 cents).</p>
                     </div>
                     <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
                 </div>

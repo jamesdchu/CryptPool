@@ -123,6 +123,7 @@ def CreateFundraiser():
         return redirect(url_for('/login'))
 
 
+
 @app.route('/f/<fundraiser_id>') 
 def f(fundraiser_id):  
     fundraisers = mongo.db.fundraisers 
@@ -214,7 +215,7 @@ def history():
 
         for fundraiser in fundraisers: 
             if(fundraiser['creator'] == user['id']):
-                my_fundraisers.append([fundraiser['title'], fundraiser['id']]) # TAKES THE FUNDRAISERS THATY YOU CREATED
+                my_fundraisers.append([fundraiser['title'], fundraiser['id'], fundraiser['img1']]) # TAKES THE FUNDRAISERS THATY YOU CREATED
 
         for donation in donations:  
             for fundraiser in my_fundraisers: 
@@ -227,13 +228,11 @@ def history():
     
             if(donation['donator']==session['user']): 
                 donated_fundraiser = fundraisers_all.find_one({'id':int(donation['fundraiser'])})  
-                donated.append([donated_fundraiser['title'], donation['asset'], donation['quantity']]) #TAKES THE TITLE, ASSET TYPE, and QUANTITY 
+                donated.append([donated_fundraiser['title'], donation['asset'], donation['quantity'], donated_fundraiser['img1'], donated_fundraiser['id']]) #TAKES THE TITLE, ASSET TYPE, and QUANTITY 
 
         return render_template('history.html', **locals()) 
     else:  
         return render_template('index.html')         
-
-# Working
 
 # @app.route('/add')
 # def add():
