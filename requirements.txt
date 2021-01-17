@@ -2,3 +2,6 @@ Flask==1.1.2
 gunicorn==19.9.0
 flask-pymongo==2.2.0
 dnspython==1.16.0
+stellar-sdk==2.8.1
+pillow==7.2.0
+qrcode==1.15.0

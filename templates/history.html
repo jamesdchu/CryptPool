@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>History</title>
+    <link rel="stylesheet" href="../static/History/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/History/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../static/History/css/Footer-Dark.css">
+    <link rel="stylesheet" href="../static/History/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="../static/History/css/Projects-Horizontal.css">
+    <link rel="stylesheet" href="../static/History/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+        <div class="container"><a class="navbar-brand" href="/index">CryptPool</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/explore">Explore</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/CreateFundraiser">Create Fundraiser</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/history">History</a></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Menu </a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="projects-horizontal">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Past Donations</h2>
+                <p class="text-center">You have donated to these fundraisers in the past:</p>
+            </div>
+            <div class="row projects">
+                <!-- JINJA FOR LOOP STARTS HERE -->
+                {% for donations in donated %}
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="../static/History/img/desk.jpg"></a></div>
+                        <div class="col">
+                            <h3 class="name">{{ donations[0] }}</h3>
+                            <p class="description"><b>Donated:</b> <br> Asset Code: {{ donations[1] }} <br> Quantity: {{ donations[2] }} </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="projects-horizontal">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">My Fundraisers</h2>
+                <p class="text-center">Take a look at your fundraisers!</p>
+            </div>
+            <div class="row projects">
+                <!-- FOR LOOOP STARTS HERE ! -->
+                {% for fundraiser in my_fundraisers %}
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="{{ fundraiser['img1'] }}"></a></div>
+                        <div class="col">
+                            <h3 class="name">{{ fundraiser[0] }}</h3>
+                            {% for asset in my_balances %}
+                            <p class="description"> {{ asset }} Asset: {{ asset[0] }} <br> Quantity: {{ asset[1] }} </p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            
+            </div>
+        </div>
+    </div>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="index.html#mb-5">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>CryptPool</h3>
+                        <p>Donate across Borders</p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Company Name © 2017</p>
+            </div>
+        </footer>
+    </div>
+    <script src="../static/History/js/jquery.min.js"></script>
+    <script src="../static/History/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
